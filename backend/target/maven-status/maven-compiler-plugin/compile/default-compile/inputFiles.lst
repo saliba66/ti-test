@@ -1,5 +1,6 @@
 /workspace/backend/src/main/java/com/unipark/backend/entity/Usuario.java
 /workspace/backend/src/main/java/com/unipark/backend/repository/VagaRepository.java
+/workspace/backend/src/main/java/com/unipark/backend/config/DataLoader.java
 /workspace/backend/src/main/java/com/unipark/backend/entity/Vaga.java
 /workspace/backend/src/main/java/com/unipark/backend/controller/AuthController.java
 /workspace/backend/src/main/java/com/unipark/backend/controller/UsuarioController.java

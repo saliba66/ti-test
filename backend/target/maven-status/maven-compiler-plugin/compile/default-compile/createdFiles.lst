@@ -12,6 +12,7 @@ com/unipark/backend/dto/VagaDTO.class
 com/unipark/backend/repository/MovimentacaoRepository.class
 com/unipark/backend/dto/UsuarioDTO.class
 com/unipark/backend/service/JwtService.class
+com/unipark/backend/config/DataLoader.class
 com/unipark/backend/controller/VagaController.class
 com/unipark/backend/dto/LoginRequest.class
 com/unipark/backend/entity/Vaga$TipoVaga.class
