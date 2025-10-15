@@ -1,0 +1,17 @@
+/workspace/backend/src/main/java/com/unipark/backend/entity/Usuario.java
+/workspace/backend/src/main/java/com/unipark/backend/repository/VagaRepository.java
+/workspace/backend/src/main/java/com/unipark/backend/entity/Vaga.java
+/workspace/backend/src/main/java/com/unipark/backend/controller/AuthController.java
+/workspace/backend/src/main/java/com/unipark/backend/controller/UsuarioController.java
+/workspace/backend/src/main/java/com/unipark/backend/dto/LoginRequest.java
+/workspace/backend/src/main/java/com/unipark/backend/dto/LoginResponse.java
+/workspace/backend/src/main/java/com/unipark/backend/dto/UsuarioDTO.java
+/workspace/backend/src/main/java/com/unipark/backend/controller/VagaController.java
+/workspace/backend/src/main/java/com/unipark/backend/entity/Movimentacao.java
+/workspace/backend/src/main/java/com/unipark/backend/dto/VagaDTO.java
+/workspace/backend/src/main/java/com/unipark/backend/repository/UsuarioRepository.java
+/workspace/backend/src/main/java/com/unipark/backend/service/AuthService.java
+/workspace/backend/src/main/java/com/unipark/backend/service/JwtService.java
+/workspace/backend/src/main/java/com/unipark/backend/repository/MovimentacaoRepository.java
+/workspace/backend/src/main/java/com/unipark/backend/UniparkBackendApplication.java
+/workspace/backend/src/main/java/com/unipark/backend/config/SecurityConfig.java
