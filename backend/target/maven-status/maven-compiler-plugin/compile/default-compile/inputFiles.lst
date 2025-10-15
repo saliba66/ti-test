@@ -1,0 +1,7 @@
+/workspace/backend/src/main/java/com/unipark/UniparkApplication.java
+/workspace/backend/src/main/java/com/unipark/config/CorsConfig.java
+/workspace/backend/src/main/java/com/unipark/health/HealthController.java
+/workspace/backend/src/main/java/com/unipark/vaga/Vaga.java
+/workspace/backend/src/main/java/com/unipark/vaga/VagaController.java
+/workspace/backend/src/main/java/com/unipark/vaga/VagaDataLoader.java
+/workspace/backend/src/main/java/com/unipark/vaga/VagaRepository.java

@@ -1,0 +1,8 @@
+com/unipark/config/CorsConfig.class
+com/unipark/config/CorsConfig$1.class
+com/unipark/vaga/VagaRepository.class
+com/unipark/UniparkApplication.class
+com/unipark/vaga/VagaDataLoader.class
+com/unipark/vaga/VagaController.class
+com/unipark/health/HealthController.class
+com/unipark/vaga/Vaga.class
