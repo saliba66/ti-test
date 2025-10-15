@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: unipark-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: unipark
+      MYSQL_USER: unipark
+      MYSQL_PASSWORD: unipark123
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./src/main/resources/data.sql:/docker-entrypoint-initdb.d/data.sql
+    networks:
+      - unipark-network
+
+  backend:
+    build: .
+    container_name: unipark-backend
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/unipark?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    depends_on:
+      - mysql
+    networks:
+      - unipark-network
+
+volumes:
+  mysql_data:
+
+networks:
+  unipark-network:
+    driver: bridge
