@@ -1,0 +1,13 @@
+# SO / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build/Cache (se existirem)
+dist/
+build/
+.cache/

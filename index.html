@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unipark - Sistema de Estacionamento</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Login Modal (shown initially) -->
+    <div id="loginModal" class="modal-overlay">
+    <div class="modal-content">
+        <div class="logo-container">
+            <h1 class="logo">
+                <img src="logo.png" alt="Unipark Logo">
+            </h1>
+            <p class="tagline">Sistema de Estacionamento Universitário</p>
+        </div>
+        <form id="loginForm">
+            
+            <div class="input-group">
+                <label for="login">Login/Matrícula</label>
+                <div class="input-icon-wrapper">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/>
+                    </svg>
+                    <input type="text" id="login" name="login" required>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label for="senha">Senha</label>
+                <div class="input-icon-wrapper">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM368 144v48h24c26.5 0 48 21.5 48 48v192c0 26.5-21.5 48-48 48H56c-26.5 0-48-21.5-48-48V240c0-26.5 21.5-48 48-48h24V144c0-70.7 57.3-128 128-128s128 57.3 128 128z"/>
+                    </svg>
+                    <input type="password" id="senha" name="senha" required>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label for="roleSelect">Selecione seu perfil:</label>
+                <div class="input-icon-wrapper">
+                    <select id="roleSelect" name="role" required>
+                        <option value="">-- Escolha um perfil --</option>
+                        <option value="ADMIN">Administrador</option>
+                        <option value="ATENDENTE">Atendente</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Entrar</button>
+        </form>
+        <div id="mensagem-erro" class="mensagem-erro"></div>
+    </div>
+</div>
+
+    <!-- Main App Container -->
+    <div id="appContainer" class="app-container hidden">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <img src="logo.png" alt="Unipark Logo">
+            </div>
+            <div class="navbar-controls">
+                <span id="userInfo" class="user-info"></span>
+                <button id="themeToggle" class="btn btn-icon" aria-label="Alternar tema">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button id="logoutBtn" class="btn btn-outline">Sair</button>
+            </div>
+        </nav>
+
+        <div class="app-layout">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <nav class="sidebar-nav">
+                    <a href="#/dashboard" class="nav-item" data-page="dashboard">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                    <a href="#/mapa" class="nav-item" data-page="mapa">
+                        <span class="nav-icon">🗺️</span>
+                        <span class="nav-text">Mapa</span>
+                    </a>
+                    <a href="#/cancela" class="nav-item" data-page="cancela" data-roles="OPERADOR,ATENDENTE,ADMIN">
+                        <span class="nav-icon">🚧</span>
+                        <span class="nav-text">Cancela</span>
+                    </a>
+                    <a href="#/ia-monitoramento" class="nav-item" data-page="ia-monitoramento" data-roles="ADMIN">
+                        <span class="nav-icon">🤖</span>
+                        <span class="nav-text">Monitoramento IA</span>
+                    </a>
+
+                    <a href="#/visitantes" class="nav-item" data-page="visitantes" data-roles="ATENDENTE,ADMIN">
+                        <span class="nav-icon">👥</span>
+                        <span class="nav-text">Visitantes</span>
+                    </a>
+                    <a href="#/usuarios" class="nav-item" data-page="usuarios" data-roles="ATENDENTE,ADMIN">
+                        <span class="nav-icon">👤</span>
+                        <span class="nav-text">Usuários</span>
+                    <a href="#/cadastro-admin" class="nav-item" data-page="cadastro-admin" data-roles="ADMIN">
+                        <span class="nav-icon">🔑</span>
+                        <span class="nav-text">Gestão Administrador</span>
+                    </a>                        
+                    </a>
+                    <a href="#/vagas" class="nav-item" data-page="vagas" data-roles="ATENDENTE,ADMIN">
+                        <span class="nav-icon">🅿️</span>
+                        <span class="nav-text">Vagas</span>
+                    </a>
+                    <a href="#/movimentacao" class="nav-item" data-page="movimentacao">
+                        <span class="nav-icon">📋</span>
+                        <span class="nav-text">Movimentação</span>
+                    </a>
+                    <a href="#/relatorios" class="nav-item" data-page="relatorios" data-roles="ATENDENTE,ADMIN">
+                        <span class="nav-icon">📈</span>
+                        <span class="nav-text">Relatórios</span>
+                    </a>
+                    <a href="#/configuracoes" class="nav-item" data-page="configuracoes" data-roles="ADMIN">
+                        <span class="nav-icon">⚙️</span>
+                        <span class="nav-text">Configurações</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <div id="app" class="page-container">
+                    <!-- Page content will be injected here -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+    <!-- Modal Container -->
+    <div id="modalContainer"></div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/app.js"></script>
+</body>
+
+</html>
